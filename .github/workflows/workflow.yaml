@@ -26,6 +26,7 @@ jobs:
         run: |
           echo "Feth master"
           git fetch --all
+          git pull
           git config --local user.name "ADE CI"
           git config --local user.email "ade_ci@intel.com"
           git merge --allow-unrelated-histories --no-commit origin/master

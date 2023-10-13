@@ -25,10 +25,10 @@ jobs:
         shell: bash
         run: |
           echo "Feth master"
-          git fetch --all
-          git pull
+          git fetch origin
           git config --local user.name "ADE CI"
           git config --local user.email "ade_ci@intel.com"
+          git status
           git merge --allow-unrelated-histories --no-commit origin/master
 
       - name: Build Stage

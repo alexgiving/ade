@@ -20,16 +20,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
-        with:
-          sparse-checkout: .
 
       - name: Sync master
         shell: bash
         run: |
           echo "Feth master"
           git fetch origin/master
-          git config --local user.name "ADE CI"
-          git config --local user.email "ade_ci@intel.com"
+          git config user.name "ADE CI"
+          git config user.email "ade_ci@intel.com"
           git merge --allow-unrelated-histories --no-commit origin/master
 
       - name: Build Stage

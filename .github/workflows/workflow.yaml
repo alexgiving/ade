@@ -28,8 +28,8 @@ jobs:
           git fetch origin
           git config --local user.name "ADE CI"
           git config --local user.email "ade_ci@intel.com"
-          git status
-          git merge --allow-unrelated-histories --no-commit origin/master
+          git checkout origin/master 
+          git merge --allow-unrelated-histories --no-commit ${{ github.ref_name }}
 
       - name: Build Stage
         shell: bash

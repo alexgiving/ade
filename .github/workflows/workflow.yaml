@@ -26,6 +26,8 @@ jobs:
         run: |
           echo "Feth master"
           git fetch --all
+          git config --local user.name ""
+          git config --local user.email ""
           git merge --allow-unrelated-histories --no-commit origin/master
 
       - name: Build Stage
